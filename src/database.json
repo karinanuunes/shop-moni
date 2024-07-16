@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camiseta com detalhes",
+      "category": "Camiseta",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/black-t-shirt.png",
+      "description": "Lorem ipsum",
+      "status": "Nova coleção",
+      "rating": 4.5,
+      "originalPrice": 120,
+      "discount": 0,
+      "updatedPrice": 120
+    },
+    {
+      "id": 2,
+      "name": "Calça skinny fit",
+      "category": "Calça",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/calca-skinny.png",
+      "description": "Lorem ipsum",
+      "status": "Nova coleção",
+      "rating": 3.5,
+      "originalPrice": 260,
+      "discount": 0.2,
+      "updatedPrice": 240
+    },
+    {
+      "id": 3,
+      "name": "Camisa xadrez",
+      "category": "Camisa",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/camisa-xadrez.png",
+      "description": "Lorem ipsum",
+      "status": "Nova coleção",
+      "rating": 4.5,
+      "originalPrice": 180,
+      "discount": 0,
+      "updatedPrice": 180
+    },
+    {
+      "id": 4,
+      "name": "Camiseta listrada",
+      "category": "Camiseta",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/camiseta-listrada.png",
+      "description": "Lorem ipsum",
+      "status": "Nova coleção",
+      "rating": 4.5,
+      "originalPrice": 160,
+      "discount": 0.3,
+      "updatedPrice": 130
+    },
+    {
+      "id": 5,
+      "name": "Camisa listrada vertical",
+      "category": "Camisa",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/camisa-listrada.png",
+      "description": "Lorem ipsum",
+      "status": "Mais vendidos",
+      "rating": 5,
+      "originalPrice": 232,
+      "discount": 0.2,
+      "updatedPrice": 212
+    },
+    {
+      "id": 6,
+      "name": "Camiseta estampada",
+      "category": "Camiseta",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/camiseta-estampada.png",
+      "description": "Lorem ipsum",
+      "status": "Mais vendidos",
+      "rating": 4,
+      "originalPrice": 145,
+      "discount": 0,
+      "updatedPrice": 145
+    },
+    {
+      "id": 7,
+      "name": "Bermuda jeans fit",
+      "category": "Bermuda",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/bermuda-jeans.png",
+      "description": "Lorem ipsum",
+      "status": "Mais vendidos",
+      "rating": 3,
+      "originalPrice": 80,
+      "discount": 0,
+      "updatedPrice": 80
+    },
+    {
+      "id": 8,
+      "name": "Calça jeans preta",
+      "category": "Calça",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/calca-jeans-preta.png",
+      "description": "Lorem ipsum",
+      "status": "Mais vendidos",
+      "rating": 4.5,
+      "originalPrice": 210,
+      "discount": 0,
+      "updatedPrice": 210
+    }
+  ]
+}
