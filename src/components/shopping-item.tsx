@@ -1,32 +1,14 @@
-import fullStar from "../assets/full-star.png";
-import halfStar from "../assets/half-star.png";
 import databaseJSON from "../database.json";
 import { IProduct } from "../types/IProduct";
 import { formatPrice } from "../utils/formatPrice";
 import { formatDiscount } from "../utils/formatDiscount";
 import { ShoppingItemProps } from "../types/ShoppingItemProps";
 import { Link } from "react-router-dom";
+import { ratingStars } from "../utils/ratingStars";
 
 const ShoppingItem = ({ status }: ShoppingItemProps) => {
   const database: IProduct[] = databaseJSON.products;
   const newArrivals = database.filter((product) => product.status === status);
-
-  const ratingStars = (stars: number) => {
-    const starsElements = [];
-    const fullStars = Math.floor(stars);
-    const hasHalfStar = stars % 1 !== 0;
-
-    for (let i = 0; i < fullStars; i++) {
-      starsElements.push(<img key={i} src={fullStar} alt="Estrela cheia" />);
-    }
-    if (hasHalfStar) {
-      starsElements.push(
-        <img key="half" src={halfStar} alt="Estrela metade" />
-      );
-    }
-
-    return starsElements;
-  };
 
   return (
     <>
