@@ -39,7 +39,7 @@ const ShoppingItem = ({ status }: ShoppingItemProps) => {
             <img src={product.imageURL} alt={product.description} />
             <div className="flex flex-col gap-2">
               <span className="font-bold text-xl">{product.name}</span>
-              <div className="flex items-center gap-1 mt-1 w-[295px]">
+              <div className="flex items-center gap-1 w-[295px]">
                 <div className="flex gap-1">{ratingStars(product.rating)}</div>
                 <span className="text-sm">
                   {product.rating}/
@@ -52,7 +52,7 @@ const ShoppingItem = ({ status }: ShoppingItemProps) => {
                 </span>
                 {product.discount > 0 && (
                   <div className="flex items-center gap-2.5">
-                    <span className="font-bold text-xl text-gray-400 line-through">
+                    <span className="font-semibold text-xl text-gray-400 line-through">
                       {formatPrice(product.originalPrice)}
                     </span>
                     <div className="bg-[#FF333310] px-3.5 py-1 rounded-[62px]">
