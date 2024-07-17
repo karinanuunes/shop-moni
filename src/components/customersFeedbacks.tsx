@@ -3,22 +3,21 @@ import rightArrow from "../assets/arrow-right.svg";
 import { ratingStars } from "../utils/ratingStars";
 import verified from "../assets/verified.svg";
 import { useState } from "react";
-import database from "../database.json";
+import { customersFeedback } from "../data/customersFeedback";
+import { IFeedback } from "../types/IFeedback";
 
 const CustomersFeedbacks = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const feedbacks = database.feedbacks;
-
   const handleLeftClick = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : feedbacks.length - 3
+      prevIndex > 0 ? prevIndex - 1 : customersFeedback.length - 3
     );
   };
 
   const handleRightClick = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex < feedbacks.length - 3 ? prevIndex + 1 : 0
+      prevIndex < customersFeedback.length - 3 ? prevIndex + 1 : 0
     );
   };
 
@@ -48,7 +47,7 @@ const CustomersFeedbacks = () => {
           className="flex gap-5 transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * (400 + 20)}px)` }}
         >
-          {feedbacks.map((feedback, index) => (
+          {customersFeedback.map((feedback: IFeedback, index: number) => (
             <div
               key={index}
               className="flex-shrink-0 flex flex-col gap-4 px-8 py-7 w-[400px] rounded-[20px] border border-gray-300"
