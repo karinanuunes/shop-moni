@@ -1,6 +1,7 @@
 import Banner from "../../components/banner";
 import CategoriesMenu from "../../components/categoriesMenu";
 import CustomersFeedbacks from "../../components/customersFeedbacks";
+import Footer from "../../components/footer";
 import Header from "../../components/header";
 import ShoppingList from "../../components/shopping-list";
 
@@ -14,6 +15,7 @@ const Home = () => {
       <ShoppingList title="MAIS VENDIDOS" status="Mais vendidos" />
       <CategoriesMenu />
       <CustomersFeedbacks />
+      <Footer />
     </>
   );
 };
