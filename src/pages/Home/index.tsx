@@ -4,6 +4,7 @@ import CustomersFeedbacks from "../../components/customersFeedbacks";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import ShoppingList from "../../components/shopping-list";
+import { handleErrorMessage } from "../../utils/handleErrorMessage";
 
 const Home = () => {
   return (
@@ -11,8 +12,24 @@ const Home = () => {
       <Header />
       <Banner />
       <ShoppingList title="COLEÇÃO NOVA" status="Nova coleção" />
+      <div className="flex justify-center items-center p-14">
+        <button
+          className="border rounded-[62px] px-14 py-4 font-medium"
+          onClick={handleErrorMessage}
+        >
+          Ver Todos
+        </button>
+      </div>
       <div className="border-t max-w-7xl m-auto"></div>
       <ShoppingList title="MAIS VENDIDOS" status="Mais vendidos" />
+      <div className="flex justify-center items-center p-14">
+        <button
+          className="border rounded-[62px] px-14 py-4 font-medium"
+          onClick={handleErrorMessage}
+        >
+          Ver Todos
+        </button>
+      </div>
       <CategoriesMenu />
       <CustomersFeedbacks />
       <Footer />
