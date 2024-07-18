@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
-import { useState } from "react"; // Import the useState function
+import { useContext, useEffect, useState } from "react"; // Import the useState function
 import Header from "../../components/header";
 import arrowRight from "../../assets/right.svg";
 import databaseJSON from "../../database.json";
 import { ratingStars } from "../../utils/ratingStars";
 import { formatPrice } from "../../utils/formatPrice";
 import { formatDiscount } from "../../utils/formatDiscount";
+import { CartContext, ICartProduct } from "../../contexts/cartContext";
+import ProductReviews from "./components/productReviews";
+import ShoppingList from "../../components/shopping-list";
+import { handleErrorMessage } from "../../utils/handleErrorMessage";
+import Footer from "../../components/footer";
 
 const ProductDetail = () => {
   const database = databaseJSON.products;
@@ -13,14 +18,22 @@ const ProductDetail = () => {
   const productId = parseInt(getId, 10);
   const product = database.find((product) => product.id === productId);
 
-  const [count, setCount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
+  const { addProduct, cart } = useContext(CartContext);
 
-  const handleAddCount = () => {
-    setCount(count + 1);
+  useEffect(() => {}), [cart];
+
+  const addToCart = () => {
+    const productToAdd = { ...product, quantity } as ICartProduct;
+    addProduct(productToAdd);
   };
 
-  const handleDiscCount = () => {
-    if (count > 1) setCount(count - 1);
+  const handleAddQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleDiscQuantity = () => {
+    if (quantity > 1) setQuantity(quantity - 1);
   };
 
   if (!product) {
@@ -132,23 +145,54 @@ const ProductDetail = () => {
           <div className="flex gap-6">
             <div className="flex gap-2.5">
               <div className="flex bg-[#F0F0F0] rounded-full">
-                <button className="w-12 h-12" onClick={handleDiscCount}>
+                <button className="w-12 h-12" onClick={handleDiscQuantity}>
                   -
                 </button>
                 <span className="w-12 h-12 flex items-center justify-center">
-                  {count}
+                  {quantity}
                 </span>
-                <button className="w-12 h-12" onClick={handleAddCount}>
+                <button className="w-12 h-12" onClick={handleAddQuantity}>
                   +
                 </button>
               </div>
             </div>
-            <button className="w-full h-12 bg-black rounded-[62px] text-white">
+            <button
+              className="w-full h-12 bg-black rounded-[62px] text-white"
+              onClick={addToCart}
+            >
               Adicionar ao Carrinho
             </button>
           </div>
         </div>
       </main>
+      <div className="max-w-7xl py-20 m-auto flex justify-around">
+        <button
+          className="border-b w-1/3 py-5 text-xl text-gray-600 text-center hover:text-gray-800"
+          onClick={handleErrorMessage}
+        >
+          Detalhes do Produto
+        </button>
+        <button className="border-b w-1/3 py-5 border-b-black text-xl font-medium text-center">
+          Avaliações & Comentários
+        </button>
+        <button
+          className="border-b w-1/3 py-5 text-xl text-gray-600 text-center hover:text-gray-800"
+          onClick={handleErrorMessage}
+        >
+          FAQs
+        </button>
+      </div>
+      <ProductReviews />
+      <div className="flex justify-center items-center pt-7">
+        <button
+          className="border px-14 py-4 rounded-[62px]"
+          onClick={handleErrorMessage}
+        >
+          Mais Comentários
+        </button>
+      </div>
+      <ShoppingList title="VOCÊ TAMBÉM PODE GOSTAR" status="Básicos" />
+      <Footer />
     </>
   );
 };

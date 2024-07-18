@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Camiseta com detalhes",
-      "category": "Camiseta",
+      "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/black-t-shirt.png",
       "description": "Lorem ipsum",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "name": "Calça skinny fit",
-      "category": "Calça",
+      "category": "Calças",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/calca-skinny.png",
       "description": "Lorem ipsum",
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "name": "Camisa xadrez",
-      "category": "Camisa",
+      "category": "Camisas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camisa-xadrez.png",
       "description": "Lorem ipsum",
@@ -42,7 +42,7 @@
     {
       "id": 4,
       "name": "Camiseta listrada",
-      "category": "Camiseta",
+      "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camiseta-listrada.png",
       "description": "Lorem ipsum",
@@ -55,7 +55,7 @@
     {
       "id": 5,
       "name": "Camisa listrada vertical",
-      "category": "Camisa",
+      "category": "Camisas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camisa-listrada.png",
       "description": "Lorem ipsum",
@@ -68,7 +68,7 @@
     {
       "id": 6,
       "name": "Camiseta estampada",
-      "category": "Camiseta",
+      "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camiseta-estampada.png",
       "description": "Lorem ipsum",
@@ -81,7 +81,7 @@
     {
       "id": 7,
       "name": "Bermuda jeans fit",
-      "category": "Bermuda",
+      "category": "Bermudas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/bermuda-jeans.png",
       "description": "Lorem ipsum",
@@ -94,7 +94,7 @@
     {
       "id": 8,
       "name": "Calça jeans preta",
-      "category": "Calça",
+      "category": "Calças",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/calca-jeans-preta.png",
       "description": "Lorem ipsum",
@@ -107,7 +107,7 @@
     {
       "id": 9,
       "name": "Camiseta estampada One Life",
-      "category": "Camiseta",
+      "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/id9img1.png",
       "description": "Esta t-shirt gráfica perfeita para qualquer ocasião. Confeccionada em tecido macio e respirável, oferece conforto e estilo superiores.",
@@ -122,6 +122,44 @@
         "../src/assets/clothes/id9img1.png",
         "../src/assets/clothes/id9img2.png",
         "../src/assets/clothes/id9img3.png"
+      ],
+      "reviews": [
+        {
+          "name": "Samantha D.",
+          "rating": 5,
+          "comment": "Eu absolutamente amo essa camiseta! O design é único, eu amei a caligrafia e o tecido é muito confortável de usar. Como designer, agradeço a atenção e grandez dos detalhes. Tornou-se minha camisa favorita.",
+          "date": "14-08-2023"
+        },
+        {
+          "name": "Alex M.",
+          "rating": 4,
+          "comment": "A camiseta excedeu minhas expectativas! As cores são vibrantes e a qualidade de impressão é de alto nível. Sendo um designer UI/UX, sou bastante exigente com estética e esta camiseta definitivamente é a minha cara.",
+          "date": "15-08-2023"
+        },
+        {
+          "name": "Ethan R.",
+          "rating": 4.5,
+          "comment": "Esta t-shirt é obrigatória para quem aprecia um bom design. O padrão minimalista, mas elegante, chamou minha atenção e o ajuste é perfeito. Posso ver o toque do designer em todos os aspectos desta camisa.",
+          "date": "16-08-2023"
+        },
+        {
+          "name": "Olivia P.",
+          "rating": 4,
+          "comment": "Como entusiasta da UI/UX, valorizo a simplicidade e a funcionalidade. Esta camisa não só me representa, mas também é ótima de usar. É evidente que o designer dedicou sua criatividade para fazer esta camiseta única.",
+          "date": "17-08-2023"
+        },
+        {
+          "name": "Liam K.",
+          "rating": 4,
+          "comment": "Esta t-shirt é uma fusão de conforto e criatividade. O tecido é macio e o design fala muito sobre a habilidade do designer. É como vestir uma obra de arte que reflete minha paixão tanto pelo design quanto pela moda.",
+          "date": "18-08-2023"
+        },
+        {
+          "name": "Ava H.",
+          "rating": 4.5,
+          "comment": "Não estou apenas vestindo uma camiseta. Estou usando uma peça de filosofia de design. Os detalhes intrincados e o layout cuidadoso do design tornam esta camisa um ponto de partida para uma conversa.",
+          "date": "19-08-2023"
+        }
       ]
     }
   ]
