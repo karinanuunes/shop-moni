@@ -3,9 +3,12 @@ import search from "../assets/search.svg";
 import cart from "../assets/cart.svg";
 import user from "../assets/user.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import database from "../database.json";
 
 const Header = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isSearch, setIsSearch] = useState("");
 
   const handleIsProductsOpen = () => {
     setIsProductsOpen(true);
@@ -14,6 +17,16 @@ const Header = () => {
   const handleIsProductsClose = () => {
     setIsProductsOpen(false);
   };
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsSearch(event.target.value);
+  };
+
+  const categories: string[] = [];
+  database.products.map((product) => {
+    if (!categories.includes(product.category))
+      categories.push(product.category);
+  });
 
   return (
     <header>
@@ -24,7 +37,7 @@ const Header = () => {
         </a>
       </div>
       <div className="flex items-center justify-center gap-10 p-6">
-        <h3 className="text-4xl font-extrabold">MONI</h3>
+        <h3 className="text-4xl font-extrabold tracking-tighter">MONI</h3>
         <nav>
           <ul className="flex items-center gap-6 relative">
             <li>
@@ -33,26 +46,18 @@ const Header = () => {
                 onMouseLeave={handleIsProductsClose}
                 className="flex flex-col items-center gap-1"
               >
-                <a href="/" className="flex gap-1">
+                <Link to="/produtos" className="flex gap-1">
                   Produtos <img src={arrowDown} alt="Seta para baixo" />
-                </a>
+                </Link>
                 {isProductsOpen ? (
-                  <ul className="absolute top-3 left-0 mt-3 w-full bg-white">
-                    <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
-                      <a href="/">Blusas</a>
-                    </li>
-                    <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
-                      <a href="/">Camisas</a>
-                    </li>
-                    <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
-                      <a href="/">Casacos</a>
-                    </li>
-                    <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
-                      <a href="/">Shorts e bermudas</a>
-                    </li>
-                    <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
-                      <a href="/">Calças</a>
-                    </li>
+                  <ul className="absolute top-3 left-0 mt-3 w-full bg-white shadow-lg rounded-lg">
+                    {categories.sort().map((product, index) => (
+                      <Link to={`/${product.toLowerCase()}`} key={index}>
+                        <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
+                          {product}
+                        </li>
+                      </Link>
+                    ))}
                   </ul>
                 ) : (
                   ""
@@ -60,27 +65,68 @@ const Header = () => {
               </button>
             </li>
             <li>
-              <a href="/">Promoção</a>
+              <Link to="/promocao">Promoção</Link>
             </li>
             <li>
-              <a href="/">Coleção Nova</a>
+              <Link to="/colecao-nova">Coleção Nova</Link>
             </li>
             <li>
-              <a href="/">Marcas</a>
+              <Link to="/marcas">Marcas</Link>
             </li>
           </ul>
         </nav>
-        <div className="bg-gray-50 flex items-center gap-3 px-4 py-3 rounded-[62px] w-[577px]">
+        <div className="relative bg-gray-50 flex items-center gap-3 px-4 py-3 rounded-[62px] w-[577px]">
           <img src={search} alt="Lupa" />
           <input
             type="text"
             className="bg-transparent w-full outline-none"
             placeholder="Procure por produtos..."
+            onChange={handleSearchChange}
+            value={isSearch}
           />
+          {isSearch ? (
+            <ul className="absolute top-full left-0 mt-2 w-full bg-white shadow-lg rounded-lg z-10">
+              <Link to={`/procura?produto=${isSearch}`}>
+                <li className="px-4 py-2 text-sm text-left w-full hover:bg-gray-50">
+                  Procurar por: {isSearch}
+                </li>
+              </Link>
+              {database.products.map((product, index) => {
+                if (
+                  product.name.toLowerCase().includes(isSearch.toLowerCase())
+                ) {
+                  return (
+                    <Link
+                      key={index}
+                      to={`/produtos/${product.id}`}
+                      className="w-full"
+                    >
+                      <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
+                        {product.name}
+                      </li>
+                    </Link>
+                  );
+                }
+              })}
+            </ul>
+          ) : (
+            ""
+          )}
+          {isSearch ? (
+            <button onClick={() => setIsSearch("")} className="text-xs">
+              Limpar
+            </button>
+          ) : (
+            ""
+          )}
         </div>
         <div className="flex gap-3">
-          <img src={cart} alt="Imagem de carrinho de compras" />
-          <img src={user} alt="Imagem de usuário" />
+          <Link to="/carrinho">
+            <img src={cart} alt="Imagem de carrinho de compras" />
+          </Link>
+          <Link to="/usuario">
+            <img src={user} alt="Imagem de usuário" />
+          </Link>
         </div>
       </div>
     </header>
