@@ -22,6 +22,12 @@ const Header = () => {
     setIsSearch(event.target.value);
   };
 
+  const handleSearchPage = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      window.location.href = `/procura?produto=${isSearch.toLowerCase()}`;
+    }
+  };
+
   const categories: string[] = [];
   database.products.map((product) => {
     if (!categories.includes(product.category))
@@ -52,7 +58,10 @@ const Header = () => {
                 {isProductsOpen ? (
                   <ul className="absolute top-3 left-0 mt-3 w-full bg-white shadow-lg rounded-lg">
                     {categories.sort().map((product, index) => (
-                      <Link to={`/${product.toLowerCase()}`} key={index}>
+                      <Link
+                        to={`/produtos/${product.toLowerCase()}`}
+                        key={index}
+                      >
                         <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
                           {product}
                         </li>
@@ -83,10 +92,11 @@ const Header = () => {
             placeholder="Procure por produtos..."
             onChange={handleSearchChange}
             value={isSearch}
+            onKeyDown={handleSearchPage}
           />
           {isSearch ? (
             <ul className="absolute top-full left-0 mt-2 w-full bg-white shadow-lg rounded-lg z-10">
-              <Link to={`/procura?produto=${isSearch}`}>
+              <Link to={`/procura?produto=${isSearch.toLowerCase()}`}>
                 <li className="px-4 py-2 text-sm text-left w-full hover:bg-gray-50">
                   Procurar por: {isSearch}
                 </li>
