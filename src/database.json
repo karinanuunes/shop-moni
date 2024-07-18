@@ -103,6 +103,26 @@
       "originalPrice": 210,
       "discount": 0,
       "updatedPrice": 210
+    },
+    {
+      "id": 9,
+      "name": "Camiseta estampada One Life",
+      "category": "Camiseta",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/id9img1.png",
+      "description": "Esta t-shirt gráfica perfeita para qualquer ocasião. Confeccionada em tecido macio e respirável, oferece conforto e estilo superiores.",
+      "status": "Básicos",
+      "rating": 4.5,
+      "originalPrice": 300,
+      "discount": 0.2,
+      "updatedPrice": 240,
+      "section": "Masculino",
+      "colors": ["#4F4631", "#314F4A", "#31344F"],
+      "images": [
+        "../src/assets/clothes/id9img1.png",
+        "../src/assets/clothes/id9img2.png",
+        "../src/assets/clothes/id9img3.png"
+      ]
     }
   ]
 }
