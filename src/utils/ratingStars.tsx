@@ -1,5 +1,5 @@
-import fullStar from "../assets/full-star.png";
-import halfStar from "../assets/half-star.png";
+import fullStar from "../assets/full-star.svg";
+import halfStar from "../assets/half-star.svg";
 
 export const ratingStars = (stars: number) => {
   const starsElements = [];

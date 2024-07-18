@@ -13,7 +13,7 @@ const ShoppingItem = ({ status }: ShoppingItemProps) => {
   return (
     <>
       {newArrivals.map((product) => (
-        <Link to={`/product/${product.id}`} key={product.id}>
+        <Link to={`/produto/${product.id}`} key={product.id}>
           <div
             className="flex flex-col items-center gap-4 w-[295px]"
             key={product.id}
@@ -22,7 +22,9 @@ const ShoppingItem = ({ status }: ShoppingItemProps) => {
             <div className="flex flex-col gap-2">
               <span className="font-bold text-xl">{product.name}</span>
               <div className="flex items-center gap-1 w-[295px]">
-                <div className="flex gap-1">{ratingStars(product.rating)}</div>
+                <div className="flex gap-1 h-5">
+                  {ratingStars(product.rating)}
+                </div>
                 <span className="text-sm">
                   {product.rating}/
                   <span className="text-gray-400 text-sm">5</span>
