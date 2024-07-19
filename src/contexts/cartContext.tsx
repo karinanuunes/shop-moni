@@ -1,7 +1,15 @@
-import { createContext, ReactNode, useCallback, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { IProduct } from "../types/IProduct";
 
 export interface ICartProduct extends IProduct {
+  color: string;
+  size: string;
   quantity: number;
 }
 
@@ -20,21 +28,38 @@ export const CartContext = createContext<ICartContext>({
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cart, setCart] = useState<ICartProduct[]>([]);
+  const initialCart = () => {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+  };
+
+  const [cart, setCart] = useState<ICartProduct[]>(initialCart);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addProduct = useCallback(
     (product: ICartProduct) => {
-      const productOnCart = cart.some((item) => item.id === product.id);
+      const existingProductIndex = cart.findIndex(
+        (item) =>
+          item.id === product.id &&
+          item.color === product.color &&
+          item.size === product.size
+      );
 
-      if (productOnCart) {
-        setCart((prevCart) => {
-          return prevCart.map((item) => {
-            if (item.id === product.id) {
-              return { ...item, quantity: item.quantity + product.quantity };
+      if (existingProductIndex !== -1) {
+        setCart((prevCart) =>
+          prevCart.map((item, index) => {
+            if (index === existingProductIndex) {
+              return {
+                ...item,
+                quantity: item.quantity + product.quantity,
+              };
             }
             return item;
-          });
-        });
+          })
+        );
       } else {
         setCart((prevCart) => [...prevCart, product]);
       }

@@ -12,8 +12,8 @@ export interface IProduct {
   originalPrice: number;
   discount: number;
   updatedPrice: number;
-  section?: string;
-  colors?: string[];
-  images?: string[];
-  reviews?: IReview[];
+  section: string;
+  colors: string[];
+  images: string[];
+  reviews: IReview[];
 }

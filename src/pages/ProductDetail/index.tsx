@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react"; // Import the useState function
+import { useContext, useState } from "react";
 import Header from "../../components/header";
 import arrowRight from "../../assets/right.svg";
 import databaseJSON from "../../database.json";
@@ -11,6 +11,7 @@ import ProductReviews from "./components/productReviews";
 import ShoppingList from "../../components/shopping-list";
 import { handleErrorMessage } from "../../utils/handleErrorMessage";
 import Footer from "../../components/footer";
+import { IProduct } from "../../types/IProduct";
 
 const ProductDetail = () => {
   const database = databaseJSON.products;
@@ -19,13 +20,24 @@ const ProductDetail = () => {
   const product = database.find((product) => product.id === productId);
 
   const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState<string | null>(null);
+  const [size, setSize] = useState<string | null>(null);
   const { addProduct, cart } = useContext(CartContext);
 
-  useEffect(() => {}), [cart];
-
   const addToCart = () => {
-    const productToAdd = { ...product, quantity } as ICartProduct;
+    if (!color) alert("Selecione cor desejada");
+    if (!size) alert("Selecione tamanho desejado");
+
+    const productToAdd = {
+      ...product,
+      quantity,
+      color,
+      size,
+    } as ICartProduct;
     addProduct(productToAdd);
+
+    console.log(cart);
+    alert("Produto adicionado ao carrinho");
   };
 
   const handleAddQuantity = () => {
@@ -34,6 +46,36 @@ const ProductDetail = () => {
 
   const handleDiscQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
+  };
+
+  const handleColorSelection = (color: string) => {
+    setColor(color);
+  };
+
+  const handleSizeSelection = (size: string) => {
+    setSize(size);
+  };
+
+  const renderProductImages = (product: IProduct) => {
+    if (product.images && product.images.length > 0) {
+      return product.images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt={`Imagem do produto ${product.name}`}
+          className="w-28 h-40 rounded-[20px] object-cover"
+        />
+      ));
+    } else {
+      return Array.from({ length: 3 }).map((_, index) => (
+        <img
+          key={index}
+          src={product.imageURL}
+          alt={`Imagem do produto ${product.name}`}
+          className="w-28 h-40 rounded-[20px] object-cover"
+        />
+      ));
+    }
   };
 
   if (!product) {
@@ -67,19 +109,12 @@ const ProductDetail = () => {
       <main className="flex gap-10 max-w-7xl m-auto">
         <div className="flex gap-3.5">
           <div className="flex flex-col gap-3">
-            {product.images?.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Imagem do produto ${product.name}`}
-                className="w-36 h-40 rounded-[20px] object-cover"
-              />
-            ))}
+            {renderProductImages(product)}
           </div>
           <img
             src={product.imageURL}
             alt={`Imagem do produto ${product.name}`}
-            className="w-[434px] h-[504px] object-cover"
+            className="w-[434px] h-[504px] object-cover rounded-[20px]"
           />
         </div>
         <div className="flex flex-col gap-4 max-w-prose">
@@ -114,11 +149,14 @@ const ProductDetail = () => {
           <div className="flex flex-col gap-3">
             <span className="text-gray-500">Selecione a Cor</span>
             <div className="flex gap-4">
-              {product.colors?.map((color, index) => (
+              {product.colors.map((selectSize, index) => (
                 <button
                   key={index}
-                  className="w-8 h-8 rounded-full border border-gray-300"
-                  style={{ backgroundColor: color }}
+                  className={`w-8 h-8 rounded-full border-gray-300 ${
+                    color === selectSize ? "border-black border-2" : ""
+                  }`}
+                  style={{ backgroundColor: selectSize }}
+                  onClick={() => handleColorSelection(selectSize)}
                 ></button>
               ))}
             </div>
@@ -127,18 +165,17 @@ const ProductDetail = () => {
           <div className="flex flex-col gap-3">
             <span className="text-gray-500">Selecione o Tamanho</span>
             <div className="flex gap-3">
-              <button className="w-12 h-12 bg-[#F0F0F0] rounded-full focus:bg-black focus:text-white">
-                P
-              </button>
-              <button className="w-12 h-12 bg-[#F0F0F0] rounded-full focus:bg-black focus:text-white">
-                M
-              </button>
-              <button className="w-12 h-12 bg-[#F0F0F0] rounded-full focus:bg-black focus:text-white">
-                G
-              </button>
-              <button className="w-12 h-12 bg-[#F0F0F0] rounded-full focus:bg-black focus:text-white">
-                GG
-              </button>
+              {["P", "M", "G", "GG"].map((selectSize) => (
+                <button
+                  key={selectSize}
+                  className={`w-12 h-12 rounded-full ${
+                    size === selectSize ? "bg-black text-white" : "bg-[#F0F0F0]"
+                  } focus:bg-black focus:text-white`}
+                  onClick={() => handleSizeSelection(selectSize)}
+                >
+                  {selectSize}
+                </button>
+              ))}
             </div>
           </div>
           <div className="border-t max-w-prose"></div>
@@ -165,7 +202,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </main>
-      <div className="max-w-7xl py-20 m-auto flex justify-around">
+      <div className="max-w-7xl pt-20 pb-6 m-auto flex justify-around">
         <button
           className="border-b w-1/3 py-5 text-xl text-gray-600 text-center hover:text-gray-800"
           onClick={handleErrorMessage}
@@ -183,15 +220,7 @@ const ProductDetail = () => {
         </button>
       </div>
       <ProductReviews />
-      <div className="flex justify-center items-center pt-7">
-        <button
-          className="border px-14 py-4 rounded-[62px]"
-          onClick={handleErrorMessage}
-        >
-          Mais Comentários
-        </button>
-      </div>
-      <ShoppingList title="VOCÊ TAMBÉM PODE GOSTAR" status="Básicos" />
+      <ShoppingList title="VOCÊ TAMBÉM PODE GOSTAR" status={product.status} />
       <Footer />
     </>
   );

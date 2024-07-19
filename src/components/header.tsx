@@ -1,14 +1,21 @@
 import arrowDown from "../assets/arrow-down.svg";
 import search from "../assets/search.svg";
-import cart from "../assets/cart.svg";
+import cartImg from "../assets/cart.svg";
 import user from "../assets/user.svg";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import database from "../database.json";
+import { CartContext } from "../contexts/cartContext";
 
 const Header = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isSearch, setIsSearch] = useState("");
+  const { cart } = useContext(CartContext);
+  const [shoppingCart, setShoppingCart] = useState<number | null>(null);
+
+  useEffect(() => {
+    setShoppingCart(cart.length + 1);
+  }, [cart.length]);
 
   const handleIsProductsOpen = () => {
     setIsProductsOpen(true);
@@ -131,8 +138,13 @@ const Header = () => {
           )}
         </div>
         <div className="flex gap-3">
-          <Link to="/carrinho">
-            <img src={cart} alt="Imagem de carrinho de compras" />
+          <Link to="/carrinho" className="relative">
+            <img src={cartImg} alt="Imagem de carrinho de compras" />
+            {shoppingCart != null && (
+              <div className="absolute -top-1.5 -right-1.5 bg-red-600 rounded-full text-white w-4 h-4 flex justify-center items-center">
+                <span className="text-xs">{shoppingCart}</span>
+              </div>
+            )}
           </Link>
           <Link to="/usuario">
             <img src={user} alt="Imagem de usuário" />
