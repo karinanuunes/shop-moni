@@ -1,3 +1,5 @@
+import { IProduct } from "./IProduct";
+
 export interface ShoppingItemProps {
-  status: string;
+  product: IProduct;
 }
