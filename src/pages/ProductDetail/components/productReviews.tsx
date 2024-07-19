@@ -91,6 +91,18 @@ const ProductReviews = () => {
           </div>
         ))}
       </div>
+      {product?.reviews?.length ?? 0 > 5 ? (
+        <div className="flex justify-center items-center pt-7">
+          <button
+            className="border px-14 py-4 rounded-[62px]"
+            onClick={handleErrorMessage}
+          >
+            Mais Comentários
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </section>
   );
 };
