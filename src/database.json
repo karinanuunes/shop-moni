@@ -6,12 +6,16 @@
       "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/black-t-shirt.png",
-      "description": "Lorem ipsum",
+      "description": "Camiseta preta de manga curta com detalhes de fita, trazendo um toque moderno e elegante ao visual casual. Ideal para qualquer ocasião.",
       "status": "Nova coleção",
       "rating": 4.5,
       "originalPrice": 120,
       "discount": 0,
-      "updatedPrice": 120
+      "updatedPrice": 120,
+      "section": "Masculino",
+      "colors": ["black"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 2,
@@ -19,12 +23,16 @@
       "category": "Calças",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/calca-skinny.png",
-      "description": "Lorem ipsum",
+      "description": "Calça jeans clara skinny, com ajuste perfeito ao corpo e estilo moderno. Ideal para um look casual e elegante.",
       "status": "Nova coleção",
       "rating": 3.5,
       "originalPrice": 260,
       "discount": 0.2,
-      "updatedPrice": 240
+      "updatedPrice": 240,
+      "section": "Masculino",
+      "colors": ["steelblue"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 3,
@@ -32,12 +40,16 @@
       "category": "Camisas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camisa-xadrez.png",
-      "description": "Lorem ipsum",
+      "description": "Camisa xadrez de manga longa, confortável e estilosa. Tecido macio com padrão clássico, ideal para um visual casual e moderno.",
       "status": "Nova coleção",
       "rating": 4.5,
       "originalPrice": 180,
       "discount": 0,
-      "updatedPrice": 180
+      "updatedPrice": 180,
+      "section": "Masculino",
+      "colors": ["midnightblue"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 4,
@@ -45,12 +57,16 @@
       "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camiseta-listrada.png",
-      "description": "Lorem ipsum",
+      "description": "Camiseta coral listrada no estilo baseball, com mangas contrastantes e um visual esportivo e descontraído. Ideal para um toque casual e estiloso.",
       "status": "Nova coleção",
       "rating": 4.5,
       "originalPrice": 160,
       "discount": 0.3,
-      "updatedPrice": 130
+      "updatedPrice": 130,
+      "section": "Masculino",
+      "colors": ["chocolate"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 5,
@@ -58,12 +74,16 @@
       "category": "Camisas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camisa-listrada.png",
-      "description": "Lorem ipsum",
+      "description": "Camisa listrada verde de manga longa, confortável e estilosa. Tecido macio com padrão clássico, ideal para um visual casual e moderno.",
       "status": "Mais vendidos",
       "rating": 5,
       "originalPrice": 232,
       "discount": 0.2,
-      "updatedPrice": 212
+      "updatedPrice": 212,
+      "section": "Masculino",
+      "colors": ["seagreen"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 6,
@@ -71,12 +91,16 @@
       "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camiseta-estampada.png",
-      "description": "Lorem ipsum",
+      "description": "T-shirt coral com estampa \"Courage\" no peito, combinando um tom vibrante com uma mensagem inspiradora. Perfeita para um look ousado e motivador.",
       "status": "Mais vendidos",
       "rating": 4,
       "originalPrice": 145,
       "discount": 0,
-      "updatedPrice": 145
+      "updatedPrice": 145,
+      "section": "Masculino",
+      "colors": ["chocolate"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 7,
@@ -84,12 +108,16 @@
       "category": "Bermudas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/bermuda-jeans.png",
-      "description": "Lorem ipsum",
+      "description": "Bermuda jeans clara, leve e casual, com corte moderno e confortável. Ideal para dias quentes e ocasiões descontraídas.",
       "status": "Mais vendidos",
       "rating": 3,
       "originalPrice": 80,
       "discount": 0,
-      "updatedPrice": 80
+      "updatedPrice": 80,
+      "section": "Masculino",
+      "colors": ["steelblue"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 8,
@@ -97,12 +125,16 @@
       "category": "Calças",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/calca-jeans-preta.png",
-      "description": "Lorem ipsum",
+      "description": "Calça jeans preta, clássica e versátil, com corte ajustado e acabamento elegante. Perfeita para um look sofisticado e casual.",
       "status": "Mais vendidos",
       "rating": 4.5,
       "originalPrice": 210,
       "discount": 0,
-      "updatedPrice": 210
+      "updatedPrice": 210,
+      "section": "Masculino",
+      "colors": ["black"],
+      "images": [],
+      "reviews": []
     },
     {
       "id": 9,
@@ -161,6 +193,57 @@
           "date": "19-08-2023"
         }
       ]
+    },
+    {
+      "id": 10,
+      "name": "Camisa Polo com Detalhes Lacoste",
+      "category": "Camisas",
+      "brand": "Lacoste",
+      "imageURL": "../src/assets/clothes/polo-azul.png",
+      "description": "Camisa polo steelblue com detalhes brancos nos ombros, oferecendo um toque de sofisticação e um estilo moderno. Ideal para um look casual e elegante.",
+      "status": "Básicos",
+      "rating": 4.5,
+      "originalPrice": 242,
+      "discount": 0.1,
+      "updatedPrice": 217.8,
+      "section": "Masculino",
+      "colors": ["steelblue"],
+      "images": [],
+      "reviews": []
+    },
+    {
+      "id": 11,
+      "name": "Camiseta Branca com Tie Dye",
+      "category": "Camisetas",
+      "brand": "Zara",
+      "imageURL": "../src/assets/clothes/camiseta-cores.png",
+      "description": "Camiseta t-shirt branca com tie-dye colorido, vibrante e descolada. Perfeita para um visual descontraído e alegre.",
+      "status": "Básicos",
+      "rating": 3.5,
+      "originalPrice": 145,
+      "discount": 0,
+      "updatedPrice": 145,
+      "section": "Masculino",
+      "colors": ["white"],
+      "images": [],
+      "reviews": []
+    },
+    {
+      "id": 12,
+      "name": "Camisa Polo Coleção California",
+      "category": "Camisas",
+      "brand": "Lacoste",
+      "imageURL": "../src/assets/clothes/polo-goiaba.png",
+      "description": "Camisa polo cor de goiaba, elegante e moderna, com tecido confortável e ajuste perfeito. Ideal para um look casual e sofisticado.",
+      "status": "Básicos",
+      "rating": 4.5,
+      "originalPrice": 180,
+      "discount": 0,
+      "updatedPrice": 180,
+      "section": "Masculino",
+      "colors": ["indianred"],
+      "images": [],
+      "reviews": []
     }
   ]
 }
