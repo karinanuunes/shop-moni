@@ -14,7 +14,7 @@ const Header = () => {
   const [shoppingCart, setShoppingCart] = useState<number | null>(null);
 
   useEffect(() => {
-    setShoppingCart(cart.length + 1);
+    setShoppingCart(cart.length);
   }, [cart.length]);
 
   const handleIsProductsOpen = () => {
@@ -115,7 +115,7 @@ const Header = () => {
                   return (
                     <Link
                       key={index}
-                      to={`/produtos/${product.id}`}
+                      to={`/produto/${product.id}`}
                       className="w-full"
                     >
                       <li className="px-4 py-2 text-sm text-left hover:bg-gray-50">
