@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { IProduct } from "../types/IProduct";
+import { formatPrice } from "../utils/formatPrice";
 
 export interface ICartProduct extends IProduct {
   color: string;
@@ -18,6 +19,11 @@ interface ICartContext {
   addProduct: (product: ICartProduct) => void;
   removeProduct: (product: ICartProduct) => void;
   clearCart: () => void;
+  attProductQuantity: (product: ICartProduct, quantity: number) => void;
+  subtotalPrice: (cart: ICartProduct[]) => string;
+  totalPrice: (cart: ICartProduct[]) => string;
+  totalDiscount: (cart: ICartProduct[]) => string;
+  totalDiscountPercentage: (cart: ICartProduct[]) => number;
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -25,6 +31,11 @@ export const CartContext = createContext<ICartContext>({
   addProduct: () => {},
   removeProduct: () => {},
   clearCart: () => {},
+  attProductQuantity: () => {},
+  subtotalPrice: () => "",
+  totalPrice: () => "",
+  totalDiscount: () => "",
+  totalDiscountPercentage: () => 0,
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
@@ -67,6 +78,21 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     [cart]
   );
 
+  const attProductQuantity = useCallback(
+    (product: ICartProduct, newQuantity: number) => {
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.id === product.id &&
+          item.color === product.color &&
+          item.size === product.size
+            ? { ...item, quantity: newQuantity }
+            : item
+        )
+      );
+    },
+    []
+  );
+
   const removeProduct = useCallback((product: ICartProduct) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
   }, []);
@@ -75,9 +101,60 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCart([]);
   }, []);
 
+  const subtotalPrice = (cart: ICartProduct[]) => {
+    const subtotal = cart.reduce(
+      (acc, item) => acc + item.originalPrice * item.quantity,
+      0
+    );
+    return formatPrice(subtotal);
+  };
+
+  const totalPrice = (cart: ICartProduct[]) => {
+    const total = cart.reduce(
+      (acc, item) => acc + item.updatedPrice * item.quantity,
+      0
+    );
+    return formatPrice(total);
+  };
+
+  const totalDiscount = (cart: ICartProduct[]) => {
+    const total = cart.reduce(
+      (acc, item) =>
+        acc + (item.originalPrice - item.updatedPrice) * item.quantity,
+      0
+    );
+    return formatPrice(total);
+  };
+
+  const totalDiscountPercentage = (cart: ICartProduct[]): number => {
+    const totalDiscount = cart.reduce(
+      (acc, item) =>
+        acc + (item.originalPrice - item.updatedPrice) * item.quantity,
+      0
+    );
+    const total = cart.reduce(
+      (acc, item) => acc + item.originalPrice * item.quantity,
+      0
+    );
+
+    if (total === 0) return 0;
+
+    return parseFloat(((totalDiscount / total) * 100).toFixed(2));
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, clearCart }}
+      value={{
+        cart,
+        addProduct,
+        removeProduct,
+        clearCart,
+        attProductQuantity,
+        subtotalPrice,
+        totalPrice,
+        totalDiscount,
+        totalDiscountPercentage,
+      }}
     >
       {children}
     </CartContext.Provider>
