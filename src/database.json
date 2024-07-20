@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Camiseta com detalhes",
+      "name": "Camiseta com Detalhes",
       "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/black-t-shirt.png",
@@ -19,7 +19,7 @@
     },
     {
       "id": 2,
-      "name": "Calça skinny fit",
+      "name": "Calça Skinny Fit",
       "category": "Calças",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/calca-skinny.png",
@@ -28,7 +28,7 @@
       "rating": 3.5,
       "originalPrice": 260,
       "discount": 0.2,
-      "updatedPrice": 240,
+      "updatedPrice": 208,
       "section": "Masculino",
       "colors": ["steelblue"],
       "images": [],
@@ -36,7 +36,7 @@
     },
     {
       "id": 3,
-      "name": "Camisa xadrez",
+      "name": "Camisa Xadrez",
       "category": "Camisas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camisa-xadrez.png",
@@ -53,7 +53,7 @@
     },
     {
       "id": 4,
-      "name": "Camiseta listrada",
+      "name": "Camiseta Listrada",
       "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camiseta-listrada.png",
@@ -62,7 +62,7 @@
       "rating": 4.5,
       "originalPrice": 160,
       "discount": 0.3,
-      "updatedPrice": 130,
+      "updatedPrice": 112,
       "section": "Masculino",
       "colors": ["chocolate"],
       "images": [],
@@ -70,7 +70,7 @@
     },
     {
       "id": 5,
-      "name": "Camisa listrada vertical",
+      "name": "Camisa Listrada Vertical",
       "category": "Camisas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camisa-listrada.png",
@@ -79,7 +79,7 @@
       "rating": 5,
       "originalPrice": 232,
       "discount": 0.2,
-      "updatedPrice": 212,
+      "updatedPrice": 185.6,
       "section": "Masculino",
       "colors": ["seagreen"],
       "images": [],
@@ -87,7 +87,7 @@
     },
     {
       "id": 6,
-      "name": "Camiseta estampada",
+      "name": "Camiseta Estampada",
       "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/camiseta-estampada.png",
@@ -104,7 +104,7 @@
     },
     {
       "id": 7,
-      "name": "Bermuda jeans fit",
+      "name": "Bermuda Jeans Fit",
       "category": "Bermudas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/bermuda-jeans.png",
@@ -121,7 +121,7 @@
     },
     {
       "id": 8,
-      "name": "Calça jeans preta",
+      "name": "Calça Jeans Preta",
       "category": "Calças",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/calca-jeans-preta.png",
@@ -138,7 +138,7 @@
     },
     {
       "id": 9,
-      "name": "Camiseta estampada One Life",
+      "name": "Camiseta Estampada One Life",
       "category": "Camisetas",
       "brand": "Zara",
       "imageURL": "../src/assets/clothes/id9img1.png",
