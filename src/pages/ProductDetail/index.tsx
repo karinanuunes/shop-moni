@@ -12,6 +12,7 @@ import ShoppingList from "../../components/shopping-list";
 import { handleErrorMessage } from "../../utils/handleErrorMessage";
 import Footer from "../../components/footer";
 import { IProduct } from "../../types/IProduct";
+import ProductQuantityCounter from "../../components/productQuantityCounter";
 
 const ProductDetail = () => {
   const database = databaseJSON.products;
@@ -22,11 +23,17 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState<string | null>(null);
   const [size, setSize] = useState<string | null>(null);
-  const { addProduct, cart } = useContext(CartContext);
+  const { addProduct } = useContext(CartContext);
 
   const addToCart = () => {
-    if (!color) alert("Selecione cor desejada");
-    if (!size) alert("Selecione tamanho desejado");
+    if (!color) {
+      alert("Selecione cor desejada");
+      return;
+    }
+    if (!size) {
+      alert("Selecione tamanho desejado");
+      return;
+    }
 
     const productToAdd = {
       ...product,
@@ -36,7 +43,6 @@ const ProductDetail = () => {
     } as ICartProduct;
     addProduct(productToAdd);
 
-    console.log(cart);
     alert("Produto adicionado ao carrinho");
   };
 
@@ -180,19 +186,12 @@ const ProductDetail = () => {
           </div>
           <div className="border-t max-w-prose"></div>
           <div className="flex gap-6">
-            <div className="flex gap-2.5">
-              <div className="flex bg-[#F0F0F0] rounded-full">
-                <button className="w-12 h-12" onClick={handleDiscQuantity}>
-                  -
-                </button>
-                <span className="w-12 h-12 flex items-center justify-center">
-                  {quantity}
-                </span>
-                <button className="w-12 h-12" onClick={handleAddQuantity}>
-                  +
-                </button>
-              </div>
-            </div>
+            <ProductQuantityCounter
+              handleAddQuantity={handleAddQuantity}
+              handleDiscQuantity={handleDiscQuantity}
+              quantity={quantity}
+              className="w-12 h-12"
+            />
             <button
               className="w-full h-12 bg-black rounded-[62px] text-white"
               onClick={addToCart}
