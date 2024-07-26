@@ -126,7 +126,7 @@ const ProductsFilter = () => {
 
   return (
     <main className="flex gap-10 max-w-7xl m-auto">
-      <div className="w-[300px] border rounded-[20px] py-5 px-6 flex flex-col gap-6">
+      <div className="w-[300px] border rounded-[20px] py-5 px-6 flex flex-col gap-6 h-fit">
         <div className="flex justify-between">
           <h3 className="text-xl font-bold">Filtros</h3>
           <img src={filter} alt="Ícone de filtro" />
@@ -243,15 +243,15 @@ const ProductsFilter = () => {
           Aplicar Filtros
         </button>
       </div>
-      <div className="flex flex-col gap-4">
-        <div className="flex justify-between">
+      <div className="flex flex-col gap-4 w-[925px]">
+        <div className="flex flex-wrap justify-between">
           <h4 className="font-bold text-2xl">
             {selectedDressStyles.length > 0 ? selectedDressStyles : "Produtos"}
           </h4>
           <div className="flex items-center gap-2">
             <span className="text-gray-600">
-              Exibindo 1-{filteredProducts.length} de {database.length}{" "}
-              Resultados
+              Exibindo {filteredProducts.length > 0 ? 1 : 0}-
+              {filteredProducts.length} de {filteredProducts.length} Resultados
             </span>
             <div>
               <span className="text-gray-600">Ordenar por:</span>
@@ -263,7 +263,7 @@ const ProductsFilter = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-5 max-w-[925px]">
+        <div className="flex flex-wrap gap-5">
           {filteredProducts.map((product) => (
             <div className="mb-4" key={product.id}>
               <ShoppingItem product={product} />
