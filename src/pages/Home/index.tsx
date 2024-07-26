@@ -13,20 +13,14 @@ const Home = () => {
       <Banner />
       <ShoppingList title="COLEÇÃO NOVA" status="Nova coleção" />
       <div className="flex justify-center items-center p-14">
-        <Link
-          className="border rounded-[62px] px-14 py-4 font-medium"
-          to={"/colecao-nova"}
-        >
+        <Link className="button px-14 py-4 font-medium" to={"/colecao-nova"}>
           Ver Todos
         </Link>
       </div>
       <div className="border-t max-w-7xl m-auto"></div>
       <ShoppingList title="MAIS VENDIDOS" status="Mais vendidos" />
       <div className="flex justify-center items-center p-14">
-        <Link
-          className="border rounded-[62px] px-14 py-4 font-medium"
-          to={"/produtos"}
-        >
+        <Link className="button px-14 py-4 font-medium" to={"/produtos"}>
           Ver Todos
         </Link>
       </div>

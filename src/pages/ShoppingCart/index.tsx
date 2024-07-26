@@ -27,7 +27,7 @@ const ShoppingCart = () => {
         <img src={arrowRight} alt="Seta para direita" />
         <Link to="/carrinho">Carrinho</Link>
       </nav>
-      <div className="max-w-7xl m-auto flex gap-5">
+      <div className="flex gap-5">
         <ProductCart />
         <div className="border rounded-[20px] w-[505px] h-fit py-5 px-6 flex flex-col gap-6">
           <h2 className="font-bold text-2xl">Resumo do Pedido</h2>

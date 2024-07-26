@@ -21,7 +21,7 @@ const SubscribeEmail = () => {
           <input
             type="submit"
             value="Se inscrever"
-            className="w-full rounded-[62px] py-3 px-4 bg-white font-semibold cursor-pointer hover:bg-gray-200"
+            className="button w-full font-semibold cursor-pointer"
           />
         </form>
       </div>

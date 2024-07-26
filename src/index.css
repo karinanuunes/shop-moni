@@ -10,3 +10,9 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@layer components {
+  .button {
+    @apply rounded-[62px] border bg-white px-6 py-3 hover:bg-black hover:text-white;
+  }
+}

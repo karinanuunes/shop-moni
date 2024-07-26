@@ -20,7 +20,7 @@ const ProductReviews = () => {
   };
 
   return (
-    <section className="max-w-7xl m-auto py-5">
+    <section className="py-5">
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-2">
           <h4 className="font-bold text-2xl">Todos os comentários</h4>
@@ -41,7 +41,7 @@ const ProductReviews = () => {
             <img src={arrowDown} alt="Ícone de seta para baixo" />
           </button>
           <button
-            className="bg-black text-white rounded-[62px] px-5 py-2 flex items-center gap-3"
+            className="button bg-black text-white px-5 py-2"
             onClick={handleErrorMessage}
           >
             Escreva um Comentário
@@ -93,10 +93,7 @@ const ProductReviews = () => {
       </div>
       {product?.reviews?.length ?? 0 > 5 ? (
         <div className="flex justify-center items-center pt-7">
-          <button
-            className="border px-14 py-4 rounded-[62px]"
-            onClick={handleErrorMessage}
-          >
+          <button className="button px-14 py-4" onClick={handleErrorMessage}>
             Mais Comentários
           </button>
         </div>

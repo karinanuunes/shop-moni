@@ -125,7 +125,7 @@ const ProductsFilter = () => {
   };
 
   return (
-    <main className="flex gap-10 max-w-7xl m-auto">
+    <main className="flex gap-10">
       <div className="w-[300px] border rounded-[20px] py-5 px-6 flex flex-col gap-6 h-fit">
         <div className="flex justify-between">
           <h3 className="text-xl font-bold">Filtros</h3>
@@ -255,7 +255,7 @@ const ProductsFilter = () => {
             </span>
             <div>
               <span className="text-gray-600">Ordenar por:</span>
-              <select className="font-medium">
+              <select className="font-medium cursor-pointer outline-none">
                 <option value="Mais recentes">Mais recentes</option>
                 <option value="Menor preço">Menor preço</option>
                 <option value="Maior preço">Maior preço</option>

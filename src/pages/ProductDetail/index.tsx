@@ -103,7 +103,7 @@ const ProductDetail = () => {
           {product.category}
         </Link>
       </nav>
-      <main className="flex gap-10 max-w-7xl m-auto">
+      <main className="flex gap-10">
         <div className="flex gap-3.5">
           <div className="flex flex-col gap-3">
             {renderProductImages(product)}
@@ -192,7 +192,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </main>
-      <div className="max-w-7xl pt-20 pb-6 m-auto flex justify-around">
+      <div className="pt-20 pb-6 flex justify-around">
         <button
           className="border-b w-1/3 py-5 text-xl text-gray-600 text-center hover:text-gray-800"
           onClick={handleErrorMessage}

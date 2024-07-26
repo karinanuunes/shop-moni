@@ -57,10 +57,7 @@ const CategoryPage = () => {
               <span className="font-bold text-2xl text-center">
                 Nenhum produto encontrado.
               </span>
-              <Link
-                to="/"
-                className="rounded-[62px] border px-8 py-4 text-center hover:bg-gray-100"
-              >
+              <Link to="/" className="button">
                 Voltar para a página inicial
               </Link>
             </div>

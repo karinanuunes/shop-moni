@@ -38,7 +38,7 @@ const CategoriesPage = () => {
           {categories.map((category) => (
             <Link
               to={`/categorias/${category.toLowerCase()}`}
-              className="rounded-[62px] border px-6 py-3 hover:bg-black hover:text-white"
+              className="button"
               key={category}
             >
               {category}
@@ -46,25 +46,11 @@ const CategoriesPage = () => {
           ))}
         </div>
         <div className="flex flex-wrap gap-5">
-          {database.length > 0 ? (
-            database.map((product) => (
-              <div className="mb-4" key={product.id}>
-                <ShoppingItem product={product} />
-              </div>
-            ))
-          ) : (
-            <div className="flex flex-col m-auto gap-4 py-6">
-              <span className="font-bold text-2xl text-center">
-                Nenhum produto encontrado.
-              </span>
-              <Link
-                to="/"
-                className="rounded-[62px] border px-8 py-4 text-center hover:bg-gray-100"
-              >
-                Voltar para a página inicial
-              </Link>
+          {database.map((product) => (
+            <div className="mb-4" key={product.id}>
+              <ShoppingItem product={product} />
             </div>
-          )}
+          ))}
         </div>
       </div>
     </div>
