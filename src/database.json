@@ -243,7 +243,8 @@
       "section": "Masculino",
       "colors": ["indianred"],
       "images": [],
-      "reviews": []
+      "reviews": [],
+      "styles": ["Casual", "Elegante"]
     }
   ]
 }

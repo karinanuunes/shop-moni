@@ -16,4 +16,7 @@ export interface IProduct {
   colors: string[];
   images: string[];
   reviews: IReview[];
+  color?: string;
+  size?: string;
+  styles?: string[];
 }
