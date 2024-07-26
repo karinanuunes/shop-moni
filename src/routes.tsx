@@ -5,6 +5,8 @@ import ShoppingCart from "./pages/ShoppingCart/index.tsx";
 import ProductsPage from "./pages/ProductsPage/index.tsx";
 import Layout from "./layout/layout.tsx";
 import NotFoundPage from "./pages/NotFound/index.tsx";
+import CategoriesPage from "./pages/Categories/index.tsx";
+import CategoryPage from "./pages/Categories/Category/index.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,22 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <ProductsPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/categorias/",
+    element: (
+      <Layout>
+        <CategoriesPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/categorias/:category",
+    element: (
+      <Layout>
+        <CategoryPage />
       </Layout>
     ),
   },

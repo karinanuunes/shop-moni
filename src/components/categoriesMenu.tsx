@@ -11,20 +11,20 @@ const CategoriesMenu = () => {
         PROCURE PELO ESTILO
       </h2>
       <div className="flex flex-wrap gap-5">
-        <Link to={`/category/casual`} className="relative">
+        <Link to={`/categorias/casual`} className="relative">
           <img src={casual} alt="Casual" className="rounded-[40px]" />
           <span className="font-bold text-3xl absolute left-9 top-6">
             Casual
           </span>
         </Link>
-        <Link to={`/category/formal`} className="relative">
+        <Link to={`/categorias/formal`} className="relative">
           <img src={formal} alt="Formal" className="rounded-[40px]" />
           <span className="font-bold text-3xl absolute left-9 top-6">
             Formal
           </span>
         </Link>
         <Link
-          to={`/category/party`}
+          to={`/categorias/festa`}
           className="w-[684px]  rounded-[40px] relative bg-white flex justify-end"
         >
           <img src={festa} alt="Festa" className="rounded-[40px]" />
@@ -33,7 +33,7 @@ const CategoriesMenu = () => {
           </span>
         </Link>
         <Link
-          to={`/category/sports`}
+          to={`/categorias/esportivo`}
           className="w-[407px] rounded-[40px] relative bg-white flex justify-end"
         >
           <img src={esportivo} alt="Esportivo" className="rounded-[40px]" />
