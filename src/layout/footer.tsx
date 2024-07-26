@@ -1,4 +1,4 @@
-import SubscribeEmail from "./subscribeEmail";
+import SubscribeEmail from "../components/subscribeEmail";
 import { Link } from "react-router-dom";
 import { socialMedias } from "../data/socialMedias";
 import { links } from "../data/footerLinkes";

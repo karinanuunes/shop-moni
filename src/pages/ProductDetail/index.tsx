@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import Header from "../../components/header";
 import arrowRight from "../../assets/right.svg";
 import databaseJSON from "../../database.json";
 import { ratingStars } from "../../utils/ratingStars";
@@ -10,9 +9,9 @@ import { CartContext, ICartProduct } from "../../contexts/cartContext";
 import ProductReviews from "./components/productReviews";
 import ShoppingList from "../../components/shopping-list";
 import { handleErrorMessage } from "../../utils/handleErrorMessage";
-import Footer from "../../components/footer";
 import { IProduct } from "../../types/IProduct";
 import ProductQuantityCounter from "../../components/productQuantityCounter";
+import NotFoundPage from "../NotFound";
 
 const ProductDetail = () => {
   const database = databaseJSON.products;
@@ -85,20 +84,12 @@ const ProductDetail = () => {
   };
 
   if (!product) {
-    // TODO: Create a 404 page
-    return (
-      <>
-        <Header />
-        <p className="text-center">Produto não encontrado.</p>
-      </>
-    );
+    return <NotFoundPage />;
   }
 
   return (
     <>
-      <Header />
-      <div className="border-t max-w-7xl m-auto"></div>
-      <nav className="flex items-center gap-1.5 max-w-7xl m-auto py-6 text-gray-600">
+      <nav className="flex items-center gap-1.5 py-6 text-gray-600">
         <Link to="/">Início</Link>
         <img src={arrowRight} alt="Seta para direita" />
         <Link to="/produtos">Produtos</Link>
@@ -220,7 +211,6 @@ const ProductDetail = () => {
       </div>
       <ProductReviews />
       <ShoppingList title="VOCÊ TAMBÉM PODE GOSTAR" status={product.status} />
-      <Footer />
     </>
   );
 };

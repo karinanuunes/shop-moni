@@ -1,9 +1,9 @@
 import Banner from "../../components/banner";
 import CategoriesMenu from "../../components/categoriesMenu";
 import CustomersFeedbacks from "../../components/customersFeedbacks";
-import Footer from "../../components/footer";
-import Header from "../../components/header";
 import ShoppingList from "../../components/shopping-list";
+import Footer from "../../layout/footer";
+import Header from "../../layout/header";
 import { handleErrorMessage } from "../../utils/handleErrorMessage";
 
 const Home = () => {

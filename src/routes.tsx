@@ -3,6 +3,8 @@ import Home from "./pages/Home/index.tsx";
 import ProductDetail from "./pages/ProductDetail/index.tsx";
 import ShoppingCart from "./pages/ShoppingCart/index.tsx";
 import ProductsPage from "./pages/ProductsPage/index.tsx";
+import Layout from "./layout/layout.tsx";
+import NotFoundPage from "./pages/NotFound/index.tsx";
 
 const router = createBrowserRouter([
   {
@@ -11,15 +13,35 @@ const router = createBrowserRouter([
   },
   {
     path: "/produto/:id",
-    element: <ProductDetail />,
+    element: (
+      <Layout>
+        <ProductDetail />
+      </Layout>
+    ),
   },
   {
     path: "/carrinho",
-    element: <ShoppingCart />,
+    element: (
+      <Layout>
+        <ShoppingCart />
+      </Layout>
+    ),
   },
   {
     path: "/produtos",
-    element: <ProductsPage />,
+    element: (
+      <Layout>
+        <ProductsPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <Layout>
+        <NotFoundPage />
+      </Layout>
+    ),
   },
 ]);
 
