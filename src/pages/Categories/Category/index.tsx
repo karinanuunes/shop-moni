@@ -19,7 +19,7 @@ const CategoryPage = () => {
         <img src={arrowRight} alt="Seta para direita" />
         <Link to="/categorias">Categorias</Link>
         <img src={arrowRight} alt="Seta para direita" />
-        <Link to={`/categorias${category}`} className="text-black">
+        <Link to={`/categorias/${category}`} className="text-black">
           {formatFirstLetterToUpperCase(category)}
         </Link>
       </nav>
@@ -57,7 +57,7 @@ const CategoryPage = () => {
               <span className="font-bold text-2xl text-center">
                 Nenhum produto encontrado.
               </span>
-              <Link to="/" className="button">
+              <Link to="/" className="button text-center">
                 Voltar para a página inicial
               </Link>
             </div>
