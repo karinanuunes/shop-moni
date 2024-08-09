@@ -1,4 +1,4 @@
-import email from "../assets/email.svg";
+import email from "/assets/email.svg";
 
 const SubscribeEmail = () => {
   return (

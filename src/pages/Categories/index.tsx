@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import arrowRight from "../../assets/right.svg";
+import arrowRight from "/assets/right.svg";
 import ShoppingItem from "../../components/shopping-item";
 import databaseJSON from "../../database.json";
 

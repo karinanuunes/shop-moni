@@ -1,7 +1,7 @@
-import arrowDown from "../assets/arrow-down.svg";
-import search from "../assets/search.svg";
-import cartImg from "../assets/cart.svg";
-import user from "../assets/user.svg";
+import arrowDown from "/assets/arrow-down.svg";
+import search from "/assets/search.svg";
+import cartImg from "/assets/cart.svg";
+import user from "/assets/user.svg";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import database from "../database.json";

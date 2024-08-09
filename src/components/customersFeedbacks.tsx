@@ -1,7 +1,7 @@
-import leftArrow from "../assets/arrow-left.svg";
-import rightArrow from "../assets/arrow-right.svg";
+import leftArrow from "/assets/arrow-left.svg";
+import rightArrow from "/assets/arrow-right.svg";
 import { ratingStars } from "../utils/ratingStars";
-import verified from "../assets/verified.svg";
+import verified from "/assets/verified.svg";
 import { useState } from "react";
 import { customersFeedback } from "../data/customersFeedback";
 import { IFeedback } from "../types/IFeedback";

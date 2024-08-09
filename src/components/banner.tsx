@@ -1,10 +1,10 @@
-import smallStar from "../assets/small-star.svg";
-import bigStar from "../assets/big-star.svg";
-import versace from "../assets/logos/versace-logo.png";
-import zara from "../assets/logos/zara-logo.png";
-import gucci from "../assets/logos/gucci-logo.png";
-import prada from "../assets/logos/prada-logo.png";
-import calvinKlein from "../assets/logos/calvin-klein-logo.png";
+import smallStar from "/assets/small-star.svg";
+import bigStar from "/assets/big-star.svg";
+import versace from "/assets/logos/versace-logo.png";
+import zara from "/assets/logos/zara-logo.png";
+import gucci from "/assets/logos/gucci-logo.png";
+import prada from "/assets/logos/prada-logo.png";
+import calvinKlein from "/assets/logos/calvin-klein-logo.png";
 
 const Banner = () => {
   return (

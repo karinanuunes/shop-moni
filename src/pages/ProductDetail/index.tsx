@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import arrowRight from "../../assets/right.svg";
+import arrowRight from "/assets/right.svg";
 import databaseJSON from "../../database.json";
 import { ratingStars } from "../../utils/ratingStars";
 import { formatPrice } from "../../utils/formatPrice";

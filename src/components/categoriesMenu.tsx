@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import casual from "../assets/categories/casual.png";
-import formal from "../assets/categories/formal.png";
-import festa from "../assets/categories/festa.png";
-import esportivo from "../assets/categories/esportivo.png";
+import casual from "/assets/categories/casual.png";
+import formal from "/assets/categories/formal.png";
+import festa from "/assets/categories/festa.png";
+import esportivo from "/assets/categories/esportivo.png";
 
 const CategoriesMenu = () => {
   return (

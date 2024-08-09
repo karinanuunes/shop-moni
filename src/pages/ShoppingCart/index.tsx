@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import arrowRight from "../../assets/right.svg";
+import arrowRight from "/assets/right.svg";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cartContext";
-import discountTag from "../../assets/discount-tag.svg";
-import arrowRightWhite from "../../assets/arrow-right-white.svg";
+import discountTag from "/assets/discount-tag.svg";
+import arrowRightWhite from "/assets/arrow-right-white.svg";
 import { handleErrorMessage } from "../../utils/handleErrorMessage";
 import ProductCart from "./components/productCart";
 

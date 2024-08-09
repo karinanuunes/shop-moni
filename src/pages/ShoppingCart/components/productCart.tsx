@@ -1,7 +1,7 @@
 import ProductQuantityCounter from "../../../components/productQuantityCounter";
 import { formatFirstLetterToUpperCase } from "../../../utils/formatFirstLetterToUpperCase";
 import { formatPrice } from "../../../utils/formatPrice";
-import exclude from "../../../assets/exclude.svg";
+import exclude from "/assets/exclude.svg";
 import { useContext } from "react";
 import { CartContext, ICartProduct } from "../../../contexts/cartContext";
 

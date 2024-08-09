@@ -1,10 +1,10 @@
 import databaseJSON from "../../../database.json";
-import filter from "../../../assets/filter.svg";
-import arrowDown from "../../../assets/arrow-down.svg";
-import verified from "../../../assets/verified.svg";
+import filter from "/assets/filter.svg";
+import arrowDown from "/assets/arrow-down.svg";
+import verified from "/assets/verified.svg";
 import { ratingStars } from "../../../utils/ratingStars";
 import { formatDate } from "../../../utils/formatDate";
-import dots from "../../../assets/dots.svg";
+import dots from "/assets/dots.svg";
 import { useState } from "react";
 import { handleErrorMessage } from "../../../utils/handleErrorMessage";
 

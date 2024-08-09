@@ -1,9 +1,9 @@
 import { useState } from "react";
-import arrowUp from "../../../assets/arrow-up.svg";
-import arrowDown from "../../../assets/arrow-down.svg";
+import arrowUp from "/assets/arrow-up.svg";
+import arrowDown from "/assets/arrow-down.svg";
 import databaseJSON from "../../../database.json";
-import filter from "../../../assets/filter.svg";
-import arrowRight from "../../../assets/right.svg";
+import filter from "/assets/filter.svg";
+import arrowRight from "/assets/right.svg";
 import PriceFilter from "./priceFilter";
 import ShoppingItem from "../../../components/shopping-item";
 

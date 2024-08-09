@@ -1,7 +1,7 @@
-import twitter from "../assets/twitter.svg";
-import facebook from "../assets/facebook.svg";
-import instagram from "../assets/instagram.svg";
-import github from "../assets/github.svg";
+import twitter from "/assets/twitter.svg";
+import facebook from "/assets/facebook.svg";
+import instagram from "/assets/instagram.svg";
+import github from "/assets/github.svg";
 
 export const socialMedias = [
   { icon: twitter, alt: "Ícone do Twitter", link: "/" },
